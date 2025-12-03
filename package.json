@@ -17,5 +17,28 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
+  },
+  "mcpServers": {
+    "default": {
+      "name": "news_联播",
+      "version": "1.0.0",
+      "description": "获取指定日期的新闻联播文字稿",
+      "tools": [
+        {
+          "name": "get_news",
+          "description": "获取指定日期的新闻联播文字稿",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "description": "日期，格式为YYYYMMDD，例如20231231"
+              }
+            },
+            "required": ["date"]
+          }
+        }
+      ]
+    }
   }
 }
