@@ -82,6 +82,26 @@ app.post('/mcp/call', async (req, res) => {
             
             const result = await getNewsByDate(params.date);
             return res.json(result);
+        } else if (tool === 'list_tools') {
+            // 支持list_tools请求，返回所有支持的工具列表
+            return res.json({
+                tools: [
+                    {
+                        name: 'get_news',
+                        description: '获取指定日期的新闻联播文字稿',
+                        parameters: {
+                            type: 'object',
+                            properties: {
+                                date: {
+                                    type: 'string',
+                                    description: '日期，格式为YYYYMMDD，例如20231231'
+                                }
+                            },
+                            required: ['date']
+                        }
+                    }
+                ]
+            });
         } else {
             return res.status(404).json({ error: `不支持的工具: ${tool}` });
         }

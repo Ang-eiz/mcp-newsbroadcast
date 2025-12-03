@@ -159,6 +159,8 @@ mcp-newsbroadcast/
       "name": "news_联播",
       "version": "1.0.0",
       "description": "获取指定日期的新闻联播文字稿",
+      "command": "npx",
+      "args": ["news-mcp-service@latest"],
       "tools": [
         {
           "name": "get_news",
