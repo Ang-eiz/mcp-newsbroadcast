@@ -1,0 +1,21 @@
+{
+  "name": "news-mcp-service",
+  "version": "1.0.0",
+  "description": "新闻联播MCP服务，用于获取指定日期的新闻联播文字稿",
+  "main": "mcp_server.js",
+  "scripts": {
+    "start": "node mcp_server.js",
+    "dev": "nodemon mcp_server.js"
+  },
+  "keywords": ["mcp", "news", "xinwenlianbo"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
