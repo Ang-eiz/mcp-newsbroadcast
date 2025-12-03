@@ -141,7 +141,43 @@ mcp-newsbroadcast/
 ├── mcp_server.js          # 主服务文件
 ├── package.json           # 项目配置文件
 ├── package-lock.json      # 依赖锁定文件
+├── ServerConfig.json      # 服务配置文件
+├── LICENSE                # 许可证文件
 └── README.md              # 项目说明文档
+```
+
+## 服务配置
+
+服务配置文件 `ServerConfig.json` 包含了MCP服务的详细配置信息，外层只包含 `mcpServers` 字段，符合服务配置要求。
+
+**ServerConfig.json内容：**
+
+```json
+{
+  "mcpServers": {
+    "default": {
+      "name": "news_联播",
+      "version": "1.0.0",
+      "description": "获取指定日期的新闻联播文字稿",
+      "tools": [
+        {
+          "name": "get_news",
+          "description": "获取指定日期的新闻联播文字稿",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "description": "日期，格式为YYYYMMDD，例如20231231"
+              }
+            },
+            "required": ["date"]
+          }
+        }
+      ]
+    }
+  }
+}
 ```
 
 ## 依赖说明
